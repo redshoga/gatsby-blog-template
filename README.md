@@ -62,13 +62,13 @@ Please refer to `/.vscode/extensions.json`.
 
 ### on PR created
 
-- Create preview of Storybook (by Netlify)
+- Create preview of Storybook (by Netlify) (Optional)
 - Create preview of web (by Gatsby Cloud)
 - Run CI(Continuous Integration) (by GitHub Actions)
 
 ### on Merge
 
-- Deploy storybook files to Netlify (by Netlify)
+- Deploy storybook files to Netlify (by Netlify) (Optional)
 - Deploy web to Firebase Hosting (by Gatsby Cloud)
 
 ### on Update contents on Contentful
