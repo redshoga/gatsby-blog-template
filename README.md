@@ -73,7 +73,7 @@ Please refer to `/.vscode/extensions.json`.
 
 ### on Update contents on Contentful
 
-- Deploy trigger run (by Contentful)
+- Deploy trigger run to Gatsby Cloud (by Contentful)
 
 ## License
 
