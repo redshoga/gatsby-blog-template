@@ -5,16 +5,11 @@ import { ComponentsLinkListQuery } from "../../../types/graphql-types"
 export const LinkList: React.FC = () => {
   const queryResult: ComponentsLinkListQuery = useStaticQuery(graphql`
     query ComponentsLinkList {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allContentfulBlogPost {
         edges {
           node {
-            frontmatter {
-              path
-              title
-            }
+            title
+            slug
           }
         }
       }
@@ -37,11 +32,9 @@ export const LinkList: React.FC = () => {
       <h2>Articles</h2>
 
       <ul>
-        {queryResult.allMarkdownRemark.edges.map(edge => (
-          <li key={edge.node.frontmatter?.path!}>
-            <Link to={edge.node.frontmatter?.path!}>
-              {edge.node.frontmatter?.title}
-            </Link>
+        {queryResult.allContentfulBlogPost.edges.map(({ node }) => (
+          <li key={node.slug!}>
+            <Link to={node.slug!}>{node.title}</Link>
           </li>
         ))}
       </ul>

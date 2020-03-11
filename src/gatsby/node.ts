@@ -1,22 +1,26 @@
+import { FetchBlogPostsQuery } from "./../../types/graphql-types.d"
 import path from "path"
 import { GatsbyNode } from "gatsby"
-import { GatsbyNodeQuery } from "../../types/graphql-types"
+import { PageContext } from "./../templates/BlogTemplate/index"
 
 export const createPages: GatsbyNode["createPages"] = async ({
   actions: { createPage },
   graphql,
   reporter,
 }) => {
-  const result = await graphql<GatsbyNodeQuery>(`
-    query GatsbyNode {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+  const blogPosts = await graphql<FetchBlogPostsQuery>(`
+    query FetchBlogPosts {
+      allContentfulBlogPost {
         edges {
           node {
-            frontmatter {
-              path
+            title
+            body {
+              body
+            }
+            createdAt
+            slug
+            tags {
+              name
             }
           }
         }
@@ -24,16 +28,19 @@ export const createPages: GatsbyNode["createPages"] = async ({
     }
   `)
 
-  if (result.errors) {
+  if (blogPosts.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
 
-  result.data!.allMarkdownRemark.edges.forEach(({ node }) => {
-    createPage({
-      path: node.frontmatter!.path || "",
+  blogPosts.data!.allContentfulBlogPost.edges.forEach(({ node }) => {
+    console.log(JSON.stringify(node, null, 2))
+    createPage<PageContext>({
+      path: node.slug!,
       component: path.resolve("src/templates/BlogTemplate/index.tsx"),
-      context: {},
+      context: {
+        title: node.title!,
+      },
     })
   })
 }
