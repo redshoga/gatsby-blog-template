@@ -71,6 +71,10 @@ Please refer to `/.vscode/extensions.json`.
 - Deploy storybook files to Netlify (by Netlify)
 - Deploy web to Firebase Hosting (by Gatsby Cloud)
 
+### on Update contents on Contentful
+
+- Deploy trigger run (by Contentful)
+
 ## License
 
 MIT
