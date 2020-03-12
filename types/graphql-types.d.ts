@@ -3347,7 +3347,6 @@ export type QuerySitePageArgs = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>,
-  context?: Maybe<SitePageContextFilterInput>,
   pluginCreator?: Maybe<SitePluginFilterInput>,
   pluginCreatorId?: Maybe<StringQueryOperatorInput>,
   componentPath?: Maybe<StringQueryOperatorInput>
@@ -3795,6 +3794,8 @@ export type SiteEdge = {
 export type SiteFieldsEnum = 
   'buildTime' |
   'siteMetadata___title' |
+  'siteMetadata___blogTitle' |
+  'siteMetadata___portfolioTitle' |
   'siteMetadata___description' |
   'siteMetadata___author' |
   'port' |
@@ -3921,7 +3922,6 @@ export type SitePage = Node & {
   children: Array<Node>,
   internal: Internal,
   isCreatedByStatefulCreatePages?: Maybe<Scalars['Boolean']>,
-  context?: Maybe<SitePageContext>,
   pluginCreator?: Maybe<SitePlugin>,
   pluginCreatorId?: Maybe<Scalars['String']>,
   componentPath?: Maybe<Scalars['String']>,
@@ -3946,14 +3946,6 @@ export type SitePageConnectionGroupArgs = {
   skip?: Maybe<Scalars['Int']>,
   limit?: Maybe<Scalars['Int']>,
   field: SitePageFieldsEnum
-};
-
-export type SitePageContext = {
-  title?: Maybe<Scalars['String']>,
-};
-
-export type SitePageContextFilterInput = {
-  title?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SitePageEdge = {
@@ -4055,7 +4047,6 @@ export type SitePageFieldsEnum =
   'internal___owner' |
   'internal___type' |
   'isCreatedByStatefulCreatePages' |
-  'context___title' |
   'pluginCreator___id' |
   'pluginCreator___parent___id' |
   'pluginCreator___parent___parent___id' |
@@ -4143,7 +4134,6 @@ export type SitePageFilterInput = {
   children?: Maybe<NodeFilterListInput>,
   internal?: Maybe<InternalFilterInput>,
   isCreatedByStatefulCreatePages?: Maybe<BooleanQueryOperatorInput>,
-  context?: Maybe<SitePageContextFilterInput>,
   pluginCreator?: Maybe<SitePluginFilterInput>,
   pluginCreatorId?: Maybe<StringQueryOperatorInput>,
   componentPath?: Maybe<StringQueryOperatorInput>,
@@ -4459,12 +4449,16 @@ export type SitePluginSortInput = {
 
 export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>,
+  blogTitle?: Maybe<Scalars['String']>,
+  portfolioTitle?: Maybe<Scalars['String']>,
   description?: Maybe<Scalars['String']>,
   author?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
+  blogTitle?: Maybe<StringQueryOperatorInput>,
+  portfolioTitle?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
   author?: Maybe<StringQueryOperatorInput>,
 };
@@ -4487,28 +4481,10 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>,
 };
 
-export type ComponentsDefaultLayoutQueryVariables = {};
+export type PagesIngexQueryVariables = {};
 
 
-export type ComponentsDefaultLayoutQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, placeholderImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
-
-export type ComponentsLinkListQueryVariables = {};
-
-
-export type ComponentsLinkListQuery = { allContentfulBlogPost: { edges: Array<{ node: Pick<ContentfulBlogPost, 'title' | 'slug'> }> } };
-
-export type ComponentsSeoInfoQueryVariables = {};
-
-
-export type ComponentsSeoInfoQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
-
-export type FetchBlogPostsQueryVariables = {};
-
-
-export type FetchBlogPostsQuery = { allContentfulBlogPost: { edges: Array<{ node: (
-        Pick<ContentfulBlogPost, 'title' | 'createdAt' | 'slug'>
-        & { body: Maybe<Pick<ContentfulBlogPostBodyRichTextNode, 'body'>>, tags: Maybe<Array<Maybe<Pick<ContentfulBlogTag, 'name'>>>> }
-      ) }> } };
+export type PagesIngexQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }>, file: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixedFragment> }> }> };
 
 export type GatsbyContentfulFixedFragment = Pick<ContentfulFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

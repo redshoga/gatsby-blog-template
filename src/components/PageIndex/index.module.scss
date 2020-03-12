@@ -1,0 +1,20 @@
+@import "../../styles/variables.scss";
+
+.container {
+  @include container;
+
+  text-align: center;
+}
+
+.icon {
+  $size: 100px;
+
+  width: $size;
+  height: $size;
+  border-radius: $size;
+  margin-top: $margin-size * 2;
+}
+
+.link {
+  display: block;
+}

@@ -9,6 +9,11 @@ type MetaProps = React.DetailedHTMLProps<
 >[]
 
 export type Props = {
+  base: {
+    title: string
+    description: string
+    author: string
+  }
   description?: string
   lang?: string
   meta?: MetaProps

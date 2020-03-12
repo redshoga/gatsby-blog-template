@@ -1,2 +1,14 @@
 $color-bg-all: #fafafa;
 $color-bg-article: #f6f6f6;
+
+$margin-size: 16px;
+
+$container-width: 600px;
+@mixin container() {
+  width: 100%;
+
+  @media all and (min-width: $container-width) {
+    width: $container-width;
+    margin: 0 auto;
+  }
+}

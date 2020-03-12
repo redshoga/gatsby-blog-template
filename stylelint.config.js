@@ -6,6 +6,10 @@ module.exports = {
   ],
   rules: {
     // Add rules
+    "at-rule-no-unknown": [
+      true,
+      { ignoreAtRules: ["include", "mixin", "each"] },
+    ],
   },
   ignoreFiles: ["src/**/*.tsx"],
 }
