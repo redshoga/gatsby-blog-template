@@ -1,6 +1,5 @@
-import { fixedIcon, fluidIcon } from "./image"
+import { fixedIcon } from "./image"
 
 export const mocks = {
   fixedIcon,
-  fluidIcon,
 }
