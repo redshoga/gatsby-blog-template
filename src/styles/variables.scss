@@ -1,4 +1,8 @@
 $color-bg-all: #fafafa;
+$color-white: white;
+
+$height-header: 60px;
+$height-footer: 60px;
 
 $margin-size: 16px;
 
@@ -10,4 +14,8 @@ $container-width: 600px;
     width: $container-width;
     margin: 0 auto;
   }
+}
+
+@mixin box-shadow() {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
 }

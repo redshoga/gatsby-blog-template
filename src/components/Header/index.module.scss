@@ -1,0 +1,11 @@
+@import "../../styles/variables.scss";
+
+.container {
+  @include box-shadow;
+
+  height: $height-header;
+  line-height: $height-header;
+  width: 100%;
+  text-align: center;
+  background-color: $color-white;
+}
