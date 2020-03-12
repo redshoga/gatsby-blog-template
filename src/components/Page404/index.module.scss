@@ -1,0 +1,11 @@
+@import "../../styles/variables.scss";
+
+.container {
+  @include container;
+
+  text-align: center;
+}
+
+.link {
+  display: block;
+}
