@@ -1,13 +1,16 @@
-import React from "react"
+import React, { ReactNode } from "react"
+import styles from "./index.module.scss"
 import { StaticFooter } from "../Footer/index.static"
 import { StaticHeader } from "../Header/index.static"
 
-export type Props = {}
+export type Props = {
+  children: ReactNode
+}
 
 export const LayoutBlog: React.FC<Props> = (props: Props) => (
   <>
     <StaticHeader />
-    <h1>sample</h1>
+    <main className={styles.container}>{props.children}</main>
     <StaticFooter />
   </>
 )

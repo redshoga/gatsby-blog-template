@@ -6,4 +6,4 @@ export default {
   component: LayoutBlog,
 }
 
-export const Default = () => <LayoutBlog />
+export const Default = () => <LayoutBlog>sample</LayoutBlog>
