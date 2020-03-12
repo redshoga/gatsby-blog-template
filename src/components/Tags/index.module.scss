@@ -1,0 +1,14 @@
+@import "../../styles/variables.scss";
+
+.tags {
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.tag {
+  display: inline-block;
+  background-color: $color-grey;
+  padding: 4px;
+  border-radius: 4px;
+  text-decoration: none;
+}
