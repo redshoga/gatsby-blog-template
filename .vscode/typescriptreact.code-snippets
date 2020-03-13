@@ -1,0 +1,41 @@
+{
+  "React FC": {
+    "prefix": "fc",
+    "body": [
+      "import React from \"react\";",
+      "import styles from \"./index.module.scss\";",
+      "",
+      "export type Props = {",
+      "  $1",
+      "}",
+      "",
+      "export const $2 = (props: Props) => {",
+      "  return (",
+      "    <>",
+      "      $3",
+      "    </>",
+      "  )",
+      "}"
+    ],
+    "description": "React FC"
+  },
+  "Storybook": {
+    "prefix": "story",
+    "body": [
+      "import React from \"react\"",
+      "import { $1, Props } from \"./index\"",
+      "",
+      "export default {",
+      "  title: \"components/$1\",",
+      "  component: $1,",
+      "}",
+      "",
+      "const props: Props = {",
+      "  $2",
+      "}",
+      "",
+      "export const Default = () => <$1 {...props} />"
+    ],
+    "description": "Storybook"
+  }
+}

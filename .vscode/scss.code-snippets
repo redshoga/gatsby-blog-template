@@ -1,0 +1,13 @@
+{
+  "Base": {
+    "prefix": "import",
+    "body": [
+      "@import \"../../styles/variables.scss\";",
+      "",
+      ".container {",
+      "  $1",
+      "}"
+    ],
+    "description": "Base"
+  }
+}
