@@ -14,4 +14,18 @@ const props: Props = {
   ],
 }
 
+const propsManyTags: Props = {
+  tags: [
+    { slug: "sample", name: "sample" },
+    { slug: "sample", name: "sample" },
+    { slug: "sample", name: "sample" },
+    { slug: "sample", name: "sample" },
+    { slug: "sample", name: "sample" },
+    { slug: "sample", name: "sample" },
+    { slug: "sample", name: "sample" },
+    { slug: "sample", name: "sample" },
+  ],
+}
+
 export const Default = () => <Tags {...props} />
+export const Many = () => <Tags {...propsManyTags} />

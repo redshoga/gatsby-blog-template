@@ -1,12 +1,17 @@
+// color
 $color-bg-all: #fafafa;
-$color-grey: #ccc;
+$color-text: rgba(0, 0, 0, 0.75);
+$color-pale-grey: #eee;
 $color-white: white;
 
+// main size
 $height-header: 60px;
 $height-footer: 60px;
 
+// margin unit
 $margin-size: 16px;
 
+// container
 $container-width: 600px;
 @mixin container() {
   width: 100%;
