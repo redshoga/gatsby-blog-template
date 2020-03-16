@@ -43,6 +43,7 @@
     "babel-loader": "^8.0.6",
     "babel-preset-gatsby": "^0.2.29",
     "babel-preset-react-app": "^9.1.1",
+    "cross-env": "^7.0.2",
     "css-loader": "^3.4.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
@@ -70,8 +71,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "storybook": "NODE_ENV=production start-storybook -s public",
-    "build-storybook": "NODE_ENV=production build-storybook -s public",
+    "storybook": "cross-env NODE_ENV=production start-storybook -s public",
+    "build-storybook": "cross-env NODE_ENV=production build-storybook -s public",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --verbose --coverage"
