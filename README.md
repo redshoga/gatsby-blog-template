@@ -1,3 +1,7 @@
+# portfolio-v2
+
+This repo created based on [redshoga/gatsby-ts-boilerplate](https://github.com/redshoga/gatsby-ts-boilerplate).
+
 # gatsby-ts-boilerplate
 
 Gatsby + TypeScript + Linter + Formatter + VSCode config + Testing framework + UI component explorer
@@ -70,10 +74,6 @@ Please refer to `/.vscode/extensions.json`.
 
 - Deploy storybook files to Netlify (by Netlify) (Optional)
 - Deploy web to Firebase Hosting (by Gatsby Cloud)
-
-### on Update contents on Contentful
-
-- Deploy trigger run to Gatsby Cloud (by Contentful)
 
 ## License
 
