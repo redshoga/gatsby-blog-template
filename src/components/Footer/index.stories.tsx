@@ -2,8 +2,16 @@ import React from "react"
 import { Footer, Props } from "./index"
 
 export default {
-  title: "components/Footer",
+  title: "Components/Footer",
   component: Footer,
 }
 
-export const Default = () => <Footer createdBy="redshoga" />
+const props: Props = {
+  linkList: [
+    { path: "top", title: "top" },
+    { path: "blog", title: "blog" },
+    { path: "portfolio", title: "portfolio" },
+  ],
+}
+
+export const Default = () => <Footer {...props} />

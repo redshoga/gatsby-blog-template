@@ -1,6 +1,7 @@
 export const path = {
-  blogIndex: () => "/blog",
-  blogPost: (slug: string) => `/blog/post/${slug}`,
-  blogTag: (slug: string) => `/blog/tag/${slug}`,
-  portfolioIndex: () => "/portfolio",
+  rootIndex: () => "",
+  blogIndex: () => "/posts",
+  blogPost: (slug: string) => `/posts/${slug}`,
+  blogTag: (slug: string) => `/posts/tag/${slug}`,
+  portfolioIndex: () => "/me",
 }

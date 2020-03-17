@@ -10,11 +10,17 @@ export const StaticHeader = () => {
         site {
           siteMetadata {
             title
+            author
           }
         }
       }
     `
   )
 
-  return <Header title={queryResult.site?.siteMetadata?.title!} />
+  return (
+    <Header
+      title={queryResult.site?.siteMetadata?.title!}
+      author={queryResult.site?.siteMetadata?.author!}
+    />
+  )
 }

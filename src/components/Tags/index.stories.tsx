@@ -2,7 +2,7 @@ import React from "react"
 import { Tags, Props } from "./index"
 
 export default {
-  title: "components/Tags",
+  title: "Components/Tags",
   component: Tags,
 }
 

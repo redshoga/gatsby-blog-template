@@ -1,0 +1,35 @@
+@import "../../styles/variables.scss";
+
+$icon-size: 100px;
+$line-height: 25px;
+
+.container {
+  display: flex;
+}
+
+.iconContainer {
+  margin-right: $margin-size;
+}
+
+.icon {
+  width: $icon-size;
+  border-radius: $icon-size;
+  vertical-align: bottom;
+}
+
+.textContainer {
+  margin-top: ($icon-size - ($line-height * 3))/2;
+}
+
+.text {
+  line-height: $line-height;
+}
+
+// .topInfo {
+// }
+.name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+// .bio {
+// }

@@ -14,7 +14,7 @@ export const query = graphql`
     }
     file(relativePath: { eq: "author.jpg" }) {
       childImageSharp {
-        fixed(width: 100, height: 100) {
+        fixed(width: 100, height: 100, quality: 80) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -29,7 +29,6 @@ export type Props = {
 const Page: React.FC<Props> = (props: Props) => {
   const pageProps: PageProps = {
     icon100px: props.data.file?.childImageSharp?.fixed! as FixedObject,
-    title: props.data.site?.siteMetadata?.title!,
     linkList: [
       { title: "Blog", path: constants.path.blogIndex() },
       { title: "Portfolio", path: constants.path.portfolioIndex() },

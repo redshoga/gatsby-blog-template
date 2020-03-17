@@ -681,6 +681,40 @@ export type FileFieldsEnum =
   'childMarkdownRemark___frontmatter___title' |
   'childMarkdownRemark___frontmatter___path' |
   'childMarkdownRemark___frontmatter___date' |
+  'childMarkdownRemark___frontmatter___thumbnail___sourceInstanceName' |
+  'childMarkdownRemark___frontmatter___thumbnail___absolutePath' |
+  'childMarkdownRemark___frontmatter___thumbnail___relativePath' |
+  'childMarkdownRemark___frontmatter___thumbnail___extension' |
+  'childMarkdownRemark___frontmatter___thumbnail___size' |
+  'childMarkdownRemark___frontmatter___thumbnail___prettySize' |
+  'childMarkdownRemark___frontmatter___thumbnail___modifiedTime' |
+  'childMarkdownRemark___frontmatter___thumbnail___accessTime' |
+  'childMarkdownRemark___frontmatter___thumbnail___changeTime' |
+  'childMarkdownRemark___frontmatter___thumbnail___birthTime' |
+  'childMarkdownRemark___frontmatter___thumbnail___root' |
+  'childMarkdownRemark___frontmatter___thumbnail___dir' |
+  'childMarkdownRemark___frontmatter___thumbnail___base' |
+  'childMarkdownRemark___frontmatter___thumbnail___ext' |
+  'childMarkdownRemark___frontmatter___thumbnail___name' |
+  'childMarkdownRemark___frontmatter___thumbnail___relativeDirectory' |
+  'childMarkdownRemark___frontmatter___thumbnail___dev' |
+  'childMarkdownRemark___frontmatter___thumbnail___mode' |
+  'childMarkdownRemark___frontmatter___thumbnail___nlink' |
+  'childMarkdownRemark___frontmatter___thumbnail___uid' |
+  'childMarkdownRemark___frontmatter___thumbnail___gid' |
+  'childMarkdownRemark___frontmatter___thumbnail___rdev' |
+  'childMarkdownRemark___frontmatter___thumbnail___ino' |
+  'childMarkdownRemark___frontmatter___thumbnail___atimeMs' |
+  'childMarkdownRemark___frontmatter___thumbnail___mtimeMs' |
+  'childMarkdownRemark___frontmatter___thumbnail___ctimeMs' |
+  'childMarkdownRemark___frontmatter___thumbnail___atime' |
+  'childMarkdownRemark___frontmatter___thumbnail___mtime' |
+  'childMarkdownRemark___frontmatter___thumbnail___ctime' |
+  'childMarkdownRemark___frontmatter___thumbnail___birthtime' |
+  'childMarkdownRemark___frontmatter___thumbnail___birthtimeMs' |
+  'childMarkdownRemark___frontmatter___thumbnail___publicURL' |
+  'childMarkdownRemark___frontmatter___thumbnail___id' |
+  'childMarkdownRemark___frontmatter___thumbnail___children' |
   'childMarkdownRemark___excerpt' |
   'childMarkdownRemark___rawMarkdownBody' |
   'childMarkdownRemark___fileAbsolutePath' |
@@ -1438,6 +1472,65 @@ export type MarkdownRemarkFieldsEnum =
   'frontmatter___title' |
   'frontmatter___path' |
   'frontmatter___date' |
+  'frontmatter___thumbnail___sourceInstanceName' |
+  'frontmatter___thumbnail___absolutePath' |
+  'frontmatter___thumbnail___relativePath' |
+  'frontmatter___thumbnail___extension' |
+  'frontmatter___thumbnail___size' |
+  'frontmatter___thumbnail___prettySize' |
+  'frontmatter___thumbnail___modifiedTime' |
+  'frontmatter___thumbnail___accessTime' |
+  'frontmatter___thumbnail___changeTime' |
+  'frontmatter___thumbnail___birthTime' |
+  'frontmatter___thumbnail___root' |
+  'frontmatter___thumbnail___dir' |
+  'frontmatter___thumbnail___base' |
+  'frontmatter___thumbnail___ext' |
+  'frontmatter___thumbnail___name' |
+  'frontmatter___thumbnail___relativeDirectory' |
+  'frontmatter___thumbnail___dev' |
+  'frontmatter___thumbnail___mode' |
+  'frontmatter___thumbnail___nlink' |
+  'frontmatter___thumbnail___uid' |
+  'frontmatter___thumbnail___gid' |
+  'frontmatter___thumbnail___rdev' |
+  'frontmatter___thumbnail___ino' |
+  'frontmatter___thumbnail___atimeMs' |
+  'frontmatter___thumbnail___mtimeMs' |
+  'frontmatter___thumbnail___ctimeMs' |
+  'frontmatter___thumbnail___atime' |
+  'frontmatter___thumbnail___mtime' |
+  'frontmatter___thumbnail___ctime' |
+  'frontmatter___thumbnail___birthtime' |
+  'frontmatter___thumbnail___birthtimeMs' |
+  'frontmatter___thumbnail___publicURL' |
+  'frontmatter___thumbnail___childImageSharp___id' |
+  'frontmatter___thumbnail___childImageSharp___children' |
+  'frontmatter___thumbnail___id' |
+  'frontmatter___thumbnail___parent___id' |
+  'frontmatter___thumbnail___parent___children' |
+  'frontmatter___thumbnail___children' |
+  'frontmatter___thumbnail___children___id' |
+  'frontmatter___thumbnail___children___children' |
+  'frontmatter___thumbnail___internal___content' |
+  'frontmatter___thumbnail___internal___contentDigest' |
+  'frontmatter___thumbnail___internal___description' |
+  'frontmatter___thumbnail___internal___fieldOwners' |
+  'frontmatter___thumbnail___internal___ignoreType' |
+  'frontmatter___thumbnail___internal___mediaType' |
+  'frontmatter___thumbnail___internal___owner' |
+  'frontmatter___thumbnail___internal___type' |
+  'frontmatter___thumbnail___childMarkdownRemark___id' |
+  'frontmatter___thumbnail___childMarkdownRemark___excerpt' |
+  'frontmatter___thumbnail___childMarkdownRemark___rawMarkdownBody' |
+  'frontmatter___thumbnail___childMarkdownRemark___fileAbsolutePath' |
+  'frontmatter___thumbnail___childMarkdownRemark___html' |
+  'frontmatter___thumbnail___childMarkdownRemark___htmlAst' |
+  'frontmatter___thumbnail___childMarkdownRemark___excerptAst' |
+  'frontmatter___thumbnail___childMarkdownRemark___headings' |
+  'frontmatter___thumbnail___childMarkdownRemark___timeToRead' |
+  'frontmatter___thumbnail___childMarkdownRemark___tableOfContents' |
+  'frontmatter___thumbnail___childMarkdownRemark___children' |
   'excerpt' |
   'rawMarkdownBody' |
   'fileAbsolutePath' |
@@ -1560,6 +1653,7 @@ export type MarkdownRemarkFrontmatter = {
   title?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
   date?: Maybe<Scalars['Date']>,
+  thumbnail?: Maybe<File>,
 };
 
 
@@ -1574,6 +1668,7 @@ export type MarkdownRemarkFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
   date?: Maybe<DateQueryOperatorInput>,
+  thumbnail?: Maybe<FileFilterInput>,
 };
 
 export type MarkdownRemarkGroupConnection = {
@@ -2109,10 +2204,8 @@ export type SiteEdge = {
 export type SiteFieldsEnum = 
   'buildTime' |
   'siteMetadata___title' |
-  'siteMetadata___blogTitle' |
-  'siteMetadata___portfolioTitle' |
-  'siteMetadata___description' |
   'siteMetadata___author' |
+  'siteMetadata___authorBio' |
   'port' |
   'host' |
   'polyfill' |
@@ -2403,6 +2496,13 @@ export type SitePageFieldsEnum =
   'pluginCreator___resolve' |
   'pluginCreator___name' |
   'pluginCreator___version' |
+  'pluginCreator___pluginOptions___plugins' |
+  'pluginCreator___pluginOptions___plugins___resolve' |
+  'pluginCreator___pluginOptions___plugins___id' |
+  'pluginCreator___pluginOptions___plugins___name' |
+  'pluginCreator___pluginOptions___plugins___version' |
+  'pluginCreator___pluginOptions___plugins___browserAPIs' |
+  'pluginCreator___pluginOptions___plugins___pluginFilepath' |
   'pluginCreator___pluginOptions___name' |
   'pluginCreator___pluginOptions___path' |
   'pluginCreator___pluginOptions___short_name' |
@@ -2412,6 +2512,7 @@ export type SitePageFieldsEnum =
   'pluginCreator___pluginOptions___display' |
   'pluginCreator___pluginOptions___icon' |
   'pluginCreator___pluginOptions___fileName' |
+  'pluginCreator___pluginOptions___maxWidth' |
   'pluginCreator___pluginOptions___pathCheck' |
   'pluginCreator___nodeAPIs' |
   'pluginCreator___browserAPIs' |
@@ -2599,6 +2700,14 @@ export type SitePluginFieldsEnum =
   'resolve' |
   'name' |
   'version' |
+  'pluginOptions___plugins' |
+  'pluginOptions___plugins___resolve' |
+  'pluginOptions___plugins___id' |
+  'pluginOptions___plugins___name' |
+  'pluginOptions___plugins___version' |
+  'pluginOptions___plugins___pluginOptions___maxWidth' |
+  'pluginOptions___plugins___browserAPIs' |
+  'pluginOptions___plugins___pluginFilepath' |
   'pluginOptions___name' |
   'pluginOptions___path' |
   'pluginOptions___short_name' |
@@ -2608,6 +2717,7 @@ export type SitePluginFieldsEnum =
   'pluginOptions___display' |
   'pluginOptions___icon' |
   'pluginOptions___fileName' |
+  'pluginOptions___maxWidth' |
   'pluginOptions___pathCheck' |
   'nodeAPIs' |
   'browserAPIs' |
@@ -2724,6 +2834,7 @@ export type SitePluginPackageJsonPeerDependenciesFilterListInput = {
 };
 
 export type SitePluginPluginOptions = {
+  plugins?: Maybe<Array<Maybe<SitePluginPluginOptionsPlugins>>>,
   name?: Maybe<Scalars['String']>,
   path?: Maybe<Scalars['String']>,
   short_name?: Maybe<Scalars['String']>,
@@ -2733,10 +2844,12 @@ export type SitePluginPluginOptions = {
   display?: Maybe<Scalars['String']>,
   icon?: Maybe<Scalars['String']>,
   fileName?: Maybe<Scalars['String']>,
+  maxWidth?: Maybe<Scalars['Int']>,
   pathCheck?: Maybe<Scalars['Boolean']>,
 };
 
 export type SitePluginPluginOptionsFilterInput = {
+  plugins?: Maybe<SitePluginPluginOptionsPluginsFilterListInput>,
   name?: Maybe<StringQueryOperatorInput>,
   path?: Maybe<StringQueryOperatorInput>,
   short_name?: Maybe<StringQueryOperatorInput>,
@@ -2746,7 +2859,40 @@ export type SitePluginPluginOptionsFilterInput = {
   display?: Maybe<StringQueryOperatorInput>,
   icon?: Maybe<StringQueryOperatorInput>,
   fileName?: Maybe<StringQueryOperatorInput>,
+  maxWidth?: Maybe<IntQueryOperatorInput>,
   pathCheck?: Maybe<BooleanQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsPlugins = {
+  resolve?: Maybe<Scalars['String']>,
+  id?: Maybe<Scalars['String']>,
+  name?: Maybe<Scalars['String']>,
+  version?: Maybe<Scalars['String']>,
+  pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptions>,
+  browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>,
+  pluginFilepath?: Maybe<Scalars['String']>,
+};
+
+export type SitePluginPluginOptionsPluginsFilterInput = {
+  resolve?: Maybe<StringQueryOperatorInput>,
+  id?: Maybe<StringQueryOperatorInput>,
+  name?: Maybe<StringQueryOperatorInput>,
+  version?: Maybe<StringQueryOperatorInput>,
+  pluginOptions?: Maybe<SitePluginPluginOptionsPluginsPluginOptionsFilterInput>,
+  browserAPIs?: Maybe<StringQueryOperatorInput>,
+  pluginFilepath?: Maybe<StringQueryOperatorInput>,
+};
+
+export type SitePluginPluginOptionsPluginsFilterListInput = {
+  elemMatch?: Maybe<SitePluginPluginOptionsPluginsFilterInput>,
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptions = {
+  maxWidth?: Maybe<Scalars['Int']>,
+};
+
+export type SitePluginPluginOptionsPluginsPluginOptionsFilterInput = {
+  maxWidth?: Maybe<IntQueryOperatorInput>,
 };
 
 export type SitePluginSortInput = {
@@ -2756,18 +2902,14 @@ export type SitePluginSortInput = {
 
 export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>,
-  blogTitle?: Maybe<Scalars['String']>,
-  portfolioTitle?: Maybe<Scalars['String']>,
-  description?: Maybe<Scalars['String']>,
   author?: Maybe<Scalars['String']>,
+  authorBio?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataFilterInput = {
   title?: Maybe<StringQueryOperatorInput>,
-  blogTitle?: Maybe<StringQueryOperatorInput>,
-  portfolioTitle?: Maybe<StringQueryOperatorInput>,
-  description?: Maybe<StringQueryOperatorInput>,
   author?: Maybe<StringQueryOperatorInput>,
+  authorBio?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
@@ -2788,15 +2930,28 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>,
 };
 
-export type ComponentsFooterQueryVariables = {};
-
-
-export type ComponentsFooterQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'author'>> }> };
-
 export type ComponentsHeaderQueryVariables = {};
 
 
-export type ComponentsHeaderQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+export type ComponentsHeaderQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'author'>> }> };
+
+export type GatsbyNodeQueryVariables = {};
+
+
+export type GatsbyNodeQuery = { allMarkdownRemark: { edges: Array<{ node: { frontmatter: Maybe<Pick<MarkdownRemarkFrontmatter, 'path'>> } }> } };
+
+export type PagesDynamicPostQueryVariables = {
+  path: Scalars['String']
+};
+
+
+export type PagesDynamicPostQuery = { markdownRemark: Maybe<(
+    Pick<MarkdownRemark, 'html'>
+    & { frontmatter: Maybe<(
+      Pick<MarkdownRemarkFrontmatter, 'date' | 'path' | 'title'>
+      & { thumbnail: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> }
+    )> }
+  )>, icon50px: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, icon100px: Maybe<{ childImageSharp: Maybe<{ fixed: Maybe<GatsbyImageSharpFixedFragment> }> }>, site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'author' | 'authorBio'>> }> };
 
 export type PagesIngexQueryVariables = {};
 

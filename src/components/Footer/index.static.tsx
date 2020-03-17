@@ -1,20 +1,15 @@
 import React from "react"
-import { Footer } from "./index"
-import { useStaticQuery, graphql } from "gatsby"
-import { ComponentsFooterQuery } from "../../../types/graphql-types"
+import { Footer, Props } from "./index"
+import { path } from "../../constants/path"
 
 export const StaticFooter = () => {
-  const queryResult: ComponentsFooterQuery = useStaticQuery(
-    graphql`
-      query ComponentsFooter {
-        site {
-          siteMetadata {
-            author
-          }
-        }
-      }
-    `
-  )
+  const props: Props = {
+    linkList: [
+      { path: path.rootIndex(), title: "top" },
+      { path: path.blogIndex(), title: "blog" },
+      { path: path.portfolioIndex(), title: "portfolio" },
+    ],
+  }
 
-  return <Footer createdBy={queryResult.site?.siteMetadata?.author!} />
+  return <Footer {...props} />
 }

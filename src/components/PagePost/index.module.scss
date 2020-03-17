@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+
+.title {
+  margin: $margin-size 0 0;
+}
+
+.author {
+  margin-top: $margin-size / 2;
+  margin-bottom: $margin-size;
+}
+
+.thumbnailImage {
+  border-radius: 2px;
+}
+
+.writternBy {
+  border-top: 1px solid $color-pale-grey;
+  padding-top: $margin-size;
+  padding-bottom: $margin-size;
+}
+
+.paging {
+  border-top: 1px solid $color-pale-grey;
+  padding-top: $margin-size;
+  padding-bottom: $margin-size;
+}

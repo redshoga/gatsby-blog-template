@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+$icon-size: 50px;
+$line-height: $icon-size / 2;
+
+.container {
+  display: flex;
+}
+
+.iconContainer {
+  margin-right: $margin-size / 2;
+}
+
+.icon {
+  width: $icon-size;
+  border-radius: $icon-size;
+  vertical-align: bottom;
+}
+
+.textContainer {
+}
+
+.text {
+  line-height: $line-height;
+
+  &:last-child {
+    color: $color-dark-grey;
+  }
+}

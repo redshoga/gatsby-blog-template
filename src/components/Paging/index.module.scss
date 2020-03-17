@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+}
+
+.containerBoth {
+  justify-content: space-between;
+}
+
+.containerOnlyPrevious {
+  justify-content: flex-start;
+}
+
+.containerOnlyNext {
+  justify-content: flex-end;
+}

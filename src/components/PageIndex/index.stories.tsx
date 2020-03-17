@@ -3,13 +3,12 @@ import { PageIndex, Props } from "./index"
 import { mocks } from "../../mocks"
 
 export default {
-  title: "components/PageIndex",
+  title: "Pages/PageIndex",
   component: PageIndex,
 }
 
 const props: Props = {
-  icon100px: mocks.fixedIcon(100),
-  title: "タイトル",
+  icon100px: mocks.fixedIcon100px(),
   linkList: [
     { path: "sample1", title: "sample1" },
     { path: "sample2", title: "sample2" },

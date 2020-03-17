@@ -2,7 +2,7 @@ import React from "react"
 import { LayoutBlog, Props } from "./index"
 
 export default {
-  title: "components/LayoutBlog",
+  title: "Layouts/LayoutBlog",
   component: LayoutBlog,
 }
 

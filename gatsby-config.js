@@ -1,10 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `ichioka.tokyo`,
-    blogTitle: `redshoga note`,
-    portfolioTitle: `redshoga portfolio`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `redshoga`,
+    authorBio: `This is redshoga.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -38,12 +36,30 @@ module.exports = {
         fileName: `types/graphql-types.d.ts`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `articles`,
-        path: `${__dirname}/contents/articles`,
+        path: `${__dirname}/contents/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/contents/post-images`,
       },
     },
   ],

@@ -12,9 +12,12 @@
   width: $size;
   height: $size;
   border-radius: $size;
-  margin-top: $margin-size * 2;
+  margin-top: $margin-size * 4;
+  margin-bottom: $margin-size * 4;
 }
 
 .link {
+  margin-bottom: $margin-size;
   display: block;
+  color: $color-text;
 }
