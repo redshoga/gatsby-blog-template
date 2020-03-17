@@ -1,2 +1,27 @@
-$color-bg-all: #fafafa;
-$color-bg-article: #f6f6f6;
+// color
+$color-bg-all: white;
+$color-text: rgba(0, 0, 0, 0.75);
+$color-dark-grey: #999;
+$color-pale-grey: #eee;
+
+// main size
+$height-header: 50px;
+$height-footer: 50px;
+
+// margin unit
+$margin-size: 16px;
+
+// container
+@mixin container() {
+  $container-width: 600px;
+  width: 100%;
+
+  @media all and (min-width: $container-width) {
+    width: $container-width;
+    margin: 0 auto;
+  }
+}
+
+@mixin box-shadow() {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}

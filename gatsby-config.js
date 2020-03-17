@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `redshoga/gatsby-ts-boilerplate`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs, @redshoga`,
+    title: `ichioka.tokyo`,
+    author: `redshoga`,
+    authorBio: `This is redshoga.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,7 +24,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `contents/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `contents/images/author.jpg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-offline`,
@@ -36,15 +36,31 @@ module.exports = {
         fileName: `types/graphql-types.d.ts`,
       },
     },
-    // For markdown articles
-    // https://www.gatsbyjs.org/docs/adding-markdown-pages/
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 600,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/contents/articles`,
+        name: `articles`,
+        path: `${__dirname}/contents/posts`,
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/contents/post-images`,
+      },
+    },
   ],
 }

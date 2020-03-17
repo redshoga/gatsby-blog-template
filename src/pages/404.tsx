@@ -1,13 +1,21 @@
 import React from "react"
-import { DefaultLayout } from "../components/DefaultLayout"
-import { SeoInfo } from "../components/SeoInfo"
+import { Page404, Props as PageProps } from "../components/Page404"
+import { constants } from "../constants"
 
-export default () => (
-  <DefaultLayout>
-    <SeoInfo title="404: Not found" />
-    <section>
-      <h2>NOT FOUND</h2>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </section>
-  </DefaultLayout>
-)
+export type Props = {}
+
+const Page: React.FC<Props> = (props: Props) => {
+  const pageProps: PageProps = {
+    linkList: [
+      { title: "Blog", path: constants.path.blogIndex() },
+      { title: "Portfolio", path: constants.path.portfolioIndex() },
+    ],
+  }
+  return (
+    <>
+      <Page404 {...pageProps} />
+    </>
+  )
+}
+
+export default Page

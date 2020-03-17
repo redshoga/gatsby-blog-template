@@ -1,18 +1,16 @@
 import path from "path"
 import { GatsbyNode } from "gatsby"
 import { GatsbyNodeQuery } from "../../types/graphql-types"
+// import { PageContext } from "../pages-dynamic/post"
 
 export const createPages: GatsbyNode["createPages"] = async ({
   actions: { createPage },
   graphql,
   reporter,
 }) => {
-  const result = await graphql<GatsbyNodeQuery>(`
+  const allPosts = await graphql<GatsbyNodeQuery>(`
     query GatsbyNode {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+      allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
         edges {
           node {
             frontmatter {
@@ -24,15 +22,15 @@ export const createPages: GatsbyNode["createPages"] = async ({
     }
   `)
 
-  if (result.errors) {
+  if (allPosts.errors) {
     reporter.panicOnBuild(`Error while running GraphQL query.`)
     return
   }
 
-  result.data!.allMarkdownRemark.edges.forEach(({ node }) => {
+  allPosts.data!.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: node.frontmatter!.path || "",
-      component: path.resolve("src/templates/BlogTemplate/index.tsx"),
+      path: node.frontmatter!.path!,
+      component: path.resolve("src/pages-dynamic/post.tsx"),
       context: {},
     })
   })
