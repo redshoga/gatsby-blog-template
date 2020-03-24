@@ -1,4 +1,6 @@
-# portfolio-v2
+WIP
+
+# gatsby-blog-template
 
 This repo created based on [redshoga/gatsby-ts-boilerplate](https://github.com/redshoga/gatsby-ts-boilerplate).
 
